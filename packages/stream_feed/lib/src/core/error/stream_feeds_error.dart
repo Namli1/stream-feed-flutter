@@ -38,8 +38,8 @@ class StreamFeedsNetworkError extends StreamFeedsError {
     this.data,
   }) : super(message);
 
-  /// Builds a [StreamFeedsNetworkError] from a [DioError].
-  factory StreamFeedsNetworkError.fromDioError(DioError error) {
+  /// Builds a [StreamFeedsNetworkError] from a [DioException].
+  factory StreamFeedsNetworkError.fromDioError(DioException error) {
     final response = error.response;
     ErrorResponse? errorResponse;
     final data = json.decode(response?.data);

@@ -70,7 +70,7 @@ class StreamHttpClient {
   @visibleForTesting
   final Dio httpClient;
 
-  StreamFeedsNetworkError _parseError(DioError err) {
+  StreamFeedsNetworkError _parseError(DioException err) {
     StreamFeedsNetworkError error;
     // locally thrown dio error
     if (err is StreamFeedsDioError) {
@@ -100,7 +100,7 @@ class StreamHttpClient {
         options: Options(headers: headers?.nullProtected),
       );
       return response;
-    } on DioError catch (error) {
+    } on DioException catch (error) {
       throw _parseError(error);
     }
   }
@@ -125,7 +125,7 @@ class StreamHttpClient {
           onReceiveProgress: onReceiveProgress,
           cancelToken: cancelToken);
       return response;
-    } on DioError catch (error) {
+    } on DioException catch (error) {
       throw _parseError(error);
     }
   }
@@ -144,7 +144,7 @@ class StreamHttpClient {
         options: Options(headers: headers?.nullProtected),
       );
       return response;
-    } on DioError catch (error) {
+    } on DioException catch (error) {
       throw _parseError(error);
     }
   }
@@ -165,7 +165,7 @@ class StreamHttpClient {
         options: Options(headers: headers?.nullProtected),
       );
       return response;
-    } on DioError catch (error) {
+    } on DioException catch (error) {
       throw _parseError(error);
     }
   }
@@ -186,7 +186,7 @@ class StreamHttpClient {
         options: Options(headers: headers?.nullProtected),
       );
       return response;
-    } on DioError catch (error) {
+    } on DioException catch (error) {
       throw _parseError(error);
     }
   }
@@ -210,7 +210,7 @@ class StreamHttpClient {
           onReceiveProgress: onReceiveProgress,
           cancelToken: cancelToken);
       return response;
-    } on DioError catch (error) {
+    } on DioException catch (error) {
       throw _parseError(error);
     }
   }

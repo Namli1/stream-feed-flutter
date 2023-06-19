@@ -65,9 +65,9 @@ void main() {
       test('cancel', () async {
         when(() => mockFiles.upload(audioAttachment,
             cancelToken: mockCancelToken,
-            onSendProgress: any(named: 'onSendProgress'))).thenThrow(DioError(
+            onSendProgress: any(named: 'onSendProgress'))).thenThrow(DioException(
           requestOptions: RequestOptions(path: ''),
-          type: DioErrorType.cancel,
+          type: DioExceptionType.cancel,
         ));
         final bloc = UploadController(mockClient)
           ..cancelMap = {audioAttachment: mockCancelToken};
@@ -206,9 +206,9 @@ void main() {
       test('cancel', () async {
         when(() => mockImages.upload(attachment,
             cancelToken: mockCancelToken,
-            onSendProgress: any(named: 'onSendProgress'))).thenThrow(DioError(
+            onSendProgress: any(named: 'onSendProgress'))).thenThrow(DioException(
           requestOptions: RequestOptions(path: ''),
-          type: DioErrorType.cancel,
+          type: DioExceptionType.cancel,
         ));
         final bloc = UploadController(mockClient)
           ..cancelMap = {attachment: mockCancelToken};

@@ -100,7 +100,7 @@ class UploadController {
         stateMap.add(newState);
       }
 
-      if (e is DioError && CancelToken.isCancel(e)) {
+      if (e is DioException && CancelToken.isCancel(e)) {
         final newState = stateMap.value
             .upsert(attachmentFile, UploadCancelled(mediaType: mediaType));
         stateMap.add(newState);
@@ -154,7 +154,7 @@ class UploadController {
         stateMap.add(newState);
       }
 
-      if (e is DioError && CancelToken.isCancel(e)) {
+      if (e is DioException && CancelToken.isCancel(e)) {
         final newState = stateMap.value
             .upsert(attachmentFile, UploadCancelled(mediaType: mediaType));
         stateMap.add(newState);
