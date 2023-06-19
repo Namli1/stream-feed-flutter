@@ -8,7 +8,7 @@ class StreamFeedsDioError extends DioException {
     required this.error,
     required RequestOptions requestOptions,
     Response? response,
-    DioExceptionType type = DioExceptionType.other,
+    DioExceptionType type = DioExceptionType.unknown,
   }) : super(
           error: error,
           requestOptions: requestOptions,
