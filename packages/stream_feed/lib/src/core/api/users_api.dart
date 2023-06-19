@@ -25,6 +25,9 @@ class UsersAPI {
       headers: {'Authorization': '$token'},
       queryParameters: {'get_or_create': getOrCreate},
       data: user,
+      options: Options(
+            contentType: Headers.jsonContentType,
+          ),
     );
     return User.fromJson(result.data!);
   }
