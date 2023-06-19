@@ -22,12 +22,9 @@ class UsersAPI {
     final user = User(id: id, data: data);
     final result = await _client.post<Map<String, dynamic>>(
       Routes.buildUsersUrl(),
-      headers: {'Authorization': '$token'},
+      headers: {'Authorization': '$token', 'contentType': 'application/json'},
       queryParameters: {'get_or_create': getOrCreate},
       data: user,
-      options: Options(
-            contentType: Headers.jsonContentType,
-          ),
     );
     return User.fromJson(result.data!);
   }
