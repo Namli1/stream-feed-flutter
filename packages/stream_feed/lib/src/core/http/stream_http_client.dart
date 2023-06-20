@@ -117,7 +117,7 @@ class StreamHttpClient {
     CancelToken? cancelToken,
   }) async {
     try {
-      if(data != null && queryParameters != null && queryParameters!.isNotEmpty) {
+      if(data != null && data is Map) {
         headers?['Content-Type'] = 'application/json';
       }
       final response = await httpClient.post<T>(enrichUrl(path, serviceName),
