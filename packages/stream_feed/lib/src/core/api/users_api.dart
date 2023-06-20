@@ -22,7 +22,7 @@ class UsersAPI {
     final user = User(id: id, data: data);
     final result = await _client.post<Map<String, dynamic>>(
       Routes.buildUsersUrl(),
-      headers: {'Authorization': '$token'},
+      headers: {'Authorization': '$token', 'Content-Type': 'application/json'},
       queryParameters: {'get_or_create': getOrCreate},
       data: user,
     );
