@@ -118,7 +118,7 @@ class StreamHttpClient {
   }) async {
     try {
       if(data != null && queryParameters != null && queryParameters!.isNotEmpty) {
-        headers['Content-Type'] = 'application/json';
+        headers?['Content-Type'] = 'application/json';
       }
       final response = await httpClient.post<T>(enrichUrl(path, serviceName),
           queryParameters: queryParameters?.nullProtected,
