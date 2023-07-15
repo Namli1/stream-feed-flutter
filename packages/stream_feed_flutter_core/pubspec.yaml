@@ -16,7 +16,9 @@ dependencies:
   meta: ^1.7.0
   rxdart: ^0.27.1
   stream_feed: #^0.6.0+2
-    path: ../stream_feed
+    git:
+      url: https://github.com/Namli1/stream-feed-flutter.git
+      path: packages/stream_feed
 dev_dependencies:
   flutter_test:
     sdk: flutter
